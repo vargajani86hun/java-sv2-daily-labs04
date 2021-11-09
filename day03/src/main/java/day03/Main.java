@@ -9,5 +9,8 @@ public class Main {
 
         Stock stock2 = new Stock(Arrays.asList(12.0, 2.0, 8.0, 4.0));
         System.out.println(stock2.maxProfit());
+
+        Stock stock3 = new Stock(Arrays.asList(4.3, 8.7, 6.6, 3.9, 10.1, 3.3));
+        System.out.println(stock3.maxProfit());
     }
 }
