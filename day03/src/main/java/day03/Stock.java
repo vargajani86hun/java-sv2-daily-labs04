@@ -10,16 +10,23 @@ public class Stock {
     }
 
     public double maxProfit() {
-        int limit = prices.size();
-        int minimum = getMinimumIndexBefore(limit);
-        while (minimum == (limit - 1)) {
-            limit--;
-            minimum = getMinimumIndexBefore(limit);
+        double max = 0;
 
+        for (int i = 0; i < prices.size(); i++) {
+            max = dailyProfit(max, i);
         }
 
-        int maximum = getMaximumIndexFromStart(minimum);
-        return prices.get(maximum) - prices.get(minimum);
+        return max;
+    }
+
+    private double dailyProfit(double max, int i) {
+        for (int j = i; j < prices.size(); j++) {
+            double profit = prices.get(j) - prices.get(i);
+            if (profit > max) {
+                max = profit;
+            }
+        }
+        return max;
     }
 
     private int getMinimumIndexBefore(int limit) {
