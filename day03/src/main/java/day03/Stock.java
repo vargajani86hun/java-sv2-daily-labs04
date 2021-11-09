@@ -28,24 +28,4 @@ public class Stock {
         }
         return max;
     }
-
-    private int getMinimumIndexBefore(int limit) {
-        int minimum = 0;
-        for (int i = 1; i < limit; i++) {
-            if (prices.get(minimum) > prices.get(i)) {
-                minimum = i;
-            }
-        }
-        return minimum;
-    }
-
-    private int getMaximumIndexFromStart(int startIndex) {
-        int maximum = startIndex;
-        for (int i = startIndex + 1; i < prices.size(); i++) {
-            if (prices.get(i) > prices.get(maximum)) {
-                maximum = i;
-            }
-        }
-        return maximum;
-    }
 }
